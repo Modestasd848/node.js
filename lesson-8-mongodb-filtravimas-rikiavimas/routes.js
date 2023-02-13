@@ -1,54 +1,25 @@
 import express from 'express';
-import User from './UserModel.js';
+import {
+  getAllUsers,
+  getUserById,
+  getAllUsersByName,
+  createNewUser,
+  deleteUserById,
+  updateUserById,
+} from './controllers.js';
 
 const router = express.Router();
 
-router.get('/users', async (req, res) => {
-  const users = await User.find();
+router.get('/users', getAllUsers);
 
-  res.json(users);
-});
+router.get('/users/:id', getUserById);
 
-router.get('/users/:id', async (req, res) => {
-  const { id } = req.params;
-  const user = await User.findById(id);
+router.get('/users/name/:name', getAllUsersByName);
 
-  res.json(user);
-});
+router.post('/users', createNewUser);
 
-router.get('/users/name/:name', async (req, res) => {
-  const { name } = req.params;
-  const users = await User.find({ name });
+router.delete('/users/:id', deleteUserById);
 
-  res.json(users);
-});
-
-router.post('/users', async (req, res) => {
-  const { name, lastName, age } = req.body;
-  const user = {
-    name,
-    lastName,
-    age,
-  };
-  const userSaved = await User.create(user);
-
-  res.json(userSaved);
-});
-
-router.delete('/users/:id', async (req, res) => {
-  const { id } = req.params;
-  const respDB = await User.findByIdAndDelete(id);
-
-  res.json(respDB);
-});
-
-router.put('/users/:id', async (req, res) => {
-  const { name, lastName, age } = req.body;
-  const { id } = req.params;
-
-  const user = await User.updateOne({ _id: id }, { name, lastName, age });
-
-  res.json(user);
-});
+router.put('/users/:id', updateUserById);
 
 export default router;
