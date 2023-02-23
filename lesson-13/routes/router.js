@@ -3,13 +3,19 @@ import {
   getAllProducts,
   createNewProduct,
   getProductById,
+  updateProductById,
+  deleteProductById,
+  routeNotFound,
 } from '../controllers/controller.js';
 const router = express.Router();
 
-router.get('/products', getAllProducts);
-router.get('/products/:id', getProductById);
-router.post('/products', createNewProduct);
-router.put('/products/:id');
-router.delete('/products/:id');
+// Pasiimma visus produktus
+router.get('/product', getAllProducts);
+router.get('/product/:id', getProductById);
+router.post('/product', createNewProduct);
+router.put('/product/:id', updateProductById);
+router.delete('/product/:id', deleteProductById);
+
+router.all('*', routeNotFound);
 
 export default router;
