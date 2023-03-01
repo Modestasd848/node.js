@@ -1,0 +1,58 @@
+body {
+  background-color: rgb(241, 240, 240);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+img {
+  width: 100%;
+  border-radius: 5px;
+}
+
+a {
+  text-decoration: none;
+  color: grey;
+  padding-left: 20px;
+}
+
+nav {
+  padding: 30px 50px;
+  background-color: rgb(234, 232, 232);
+}
+
+.wrapper {
+  width: 80%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  margin-top: 0px;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+}
+
+.car-card {
+  width: 20%;
+  border-radius: 6px;
+  background-color: white;
+  margin-top: 30px;
+  padding: 40px;
+}
+
+h3,
+p {
+  color: rgb(94, 93, 93);
+  margin: 0px;
+}
+
+.price-brand {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 600;
+  margin-bottom: 40px;
+}
+
+.delete-button {
+  margin-top: 30px;
+  border: none;
+  background-color: white;
+}

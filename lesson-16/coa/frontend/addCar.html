@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+      integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./viewCars.css" />
+    <script src="addCar.js" type="module"></script>
+    <title>Create A New Car</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="./viewCars.html">CARS</a>
+        <a href="./addCar.html">ADD CAR</a>
+      </nav>
+    </header>
+    <main>
+      <form>
+        <label for="name">Car Name: <input type="text" id="name" /></label>
+        <label for="image">Car URL: <input type="text" id="image" /></label>
+        <label for="price">Car Price: <input type="number" id="price" /></label>
+        <label for="numberplate"
+          >Number Plate: <input type="text" id="numberplate"
+        /></label>
+        <button type="submit">Add New Car</button>
+      </form>
+    </main>
+  </body>
+</html>
